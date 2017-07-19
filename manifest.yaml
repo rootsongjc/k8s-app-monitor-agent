@@ -12,7 +12,8 @@ spec:
     spec:
       containers:
       - image: jimmysong/k8s-app-monitor-agent:latest
-        name : app
+        imagePullPolicy: Always
+        name: app
         ports:
         - containerPort: 8080
         env: 

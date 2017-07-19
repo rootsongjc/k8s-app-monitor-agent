@@ -40,7 +40,11 @@ func drawChart(res http.ResponseWriter, req *http.Request) {
 	err = json.NewDecoder(resp.Body).Decode(&m)
 	checkError(err)
 	sbc := chart.BarChart{
-		Title:    m.AppName + "," + m.Domain + "," + m.Host,
+		Title: "AppName:" + m.AppName + "\nDomain:" + m.Domain + "\nHost:" + m.Host,
+		TitleStyle: chart.Style{
+			Show:                true,
+			TextHorizontalAlign: 1,
+		},
 		Height:   512,
 		BarWidth: 60,
 		XAxis: chart.Style{
