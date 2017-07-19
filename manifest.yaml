@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-app-monitor-agent
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: k8s-app-monitor-agent
+    spec:
+      containers:
+      - image: jimmysong/k8s-app-monitor-agent:latest
+        name : app
+        ports:
+        - containerPort: 8080
+        env: 
+        - name: APP_PORT
+          value: "3000"
+        - name: SERVICE_NAME
+          value: "k8s-app-monitor-test"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-app-monitor-agent
+  labels:
+    k8s-svc: k8s-app-monitor-agent
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    name: http
+  selector:
+    k8s-app: k8s-app-monitor-agent

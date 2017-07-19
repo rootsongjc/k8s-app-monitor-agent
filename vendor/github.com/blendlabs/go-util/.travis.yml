@@ -1,0 +1,16 @@
+language: go
+sudo: false
+
+notifications:
+  slack:
+    rooms:
+      secure: "alg1esJzb3RDccdglWf0FnPY6xNFYdRInhVnU2HPHnmH2wX1EC7R3skAkVs0Up59QCa98qduTSw4kvqjVWuXK5tNTDfdy/odaSH2Q1+bVCDKptaeUUs5XnObTmertwxgOuoO+3XhoyRc/b8tzFh8heqCzzXLpjQPuM5Wal0hbl5bxJW7GxwoEYqN8TqFEtQtGTcUtkruuTXkfvpJL88hUxT1cOJ44on/n8e25hFUrMKG0KE+GP4geqhqGPw7IIxx3mminOdFwwtftkGa8W+rMsl2RG1piT5rcXWQkU3+ABw7nEvg3MvRWjR/kHYbh57xrJJaTK3cLfiU3yBdd4Ayuq2uMDLNlb/U2uoHs6wsitsswA8ageOtq/NGVeWonUy/AuNpJpnC0WqzBxRTeXfBUwUWQ2tih9jzFxW5Z9E2pPDoZOJ6032+9uefT1KkYJoCUuGK1wP1DJ5TsN+JDsA5xO9msIPg52VxRlt2MJxwy25rEIZanqjY1pD2dK4uh2dVytsUK3DfVLoh7gV9HeP50btPFQC9fFQIeoiAo+4Jo1/klw3OhbsXeXbT4Z0HvcbNy7QnH254HRSe686wrcUBG51MBWdSeurwHTOhg+aTLBWw8ok23LFWI7kW2EMckCsOIHjUp1btKYgXQlSkB+ZuPWWWOjJiVuqL9WKpLgK/aII="
+    on_success: always
+    on_failure: always
+    template:
+      - "%{repository_slug} %{message} %{duration}"
+      - "%{author} : (<%{compare_url}|%{commit}>) %{commit_message}"
+      - "Build Details: %{build_url}"
+
+script: 
+  - go test ./...

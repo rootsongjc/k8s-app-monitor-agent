@@ -1,0 +1,40 @@
+hash: 6f4b00661fd62e39cad3c268cdad8785b691200fb8ae09e47a8297d2b0189a31
+updated: 2017-07-19T14:47:35.677815172+08:00
+imports:
+- name: github.com/blendlabs/go-exception
+  version: d3934f941cb001f2b61a69b25dbc76eab3e6ff29
+- name: github.com/blendlabs/go-util
+  version: 6564ff05cc50b880cde8fa1d4265e7ee3a4aba68
+- name: github.com/codegangsta/negroni
+  version: aac393b02b969df303449ed8ae194a1f8f3b48d6
+- name: github.com/golang/freetype
+  version: e2365dfdc4a05e4b8299a783240d4a7d5a65d4e4
+  subpackages:
+  - raster
+  - truetype
+- name: github.com/gorilla/context
+  version: a8d44e7d8e4d532b6a27a02dd82abb31cc1b01bd
+- name: github.com/gorilla/mux
+  version: 9c19ed558d5df4da88e2ade9c8940d742aef0e7e
+- name: github.com/rootsongjc/k8s-app-monitor-test
+  version: c5cc23e23cc4bfbae6bcf616fd77ba366dd6d594
+  subpackages:
+  - service
+- name: github.com/unrolled/render
+  version: 198ad4d8b8a4612176b804ca10555b222a086b40
+- name: github.com/wcharczuk/go-chart
+  version: a0ea0129036c613675742b96f051df3a1a08821f
+  subpackages:
+  - drawing
+  - matrix
+  - roboto
+  - seq
+  - util
+- name: golang.org/x/image
+  version: 426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d
+  subpackages:
+  - draw
+  - font
+  - math/f64
+  - math/fixed
+testImports: []

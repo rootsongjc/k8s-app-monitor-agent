@@ -1,0 +1,6 @@
+package: github.com/rootsongjc/k8s-app-monitor-agent
+import:
+- package: github.com/rootsongjc/k8s-app-monitor-test
+  subpackages:
+  - service
+- package: github.com/wcharczuk/go-chart

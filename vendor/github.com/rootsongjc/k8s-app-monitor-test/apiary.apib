@@ -1,0 +1,73 @@
+FORMAT: 1A
+HOST: http://localhost:3000/
+
+# Kubernetes app monitoring test
+
+This is a simple application to test the application monitoring in kubernetes. For the rules used as a reference when building this application, see [The Rules of Go](https://en.wikipedia.org/wiki/Rules_of_go)
+
+# Metrics
+
+The application only has one monitoring metric now.
+
+## Metrics Collection [/metrics]
+
+The metric collection represents the status of the application.
+
+### List All Metric [GET]
+
+Get the application's metric now.
+
++ Response 200 (application/json)
+
+    ```json
+    {
+      "performance_index": {
+        "failRatio": 0,
+        "failAmount": 0,
+        "accessAmount": 0,
+        "maxConcurrent": 0,
+        "maxLatency": 0,
+        "minLatency": 0,
+        "avgLatency": 0
+      },
+      "host": "172.22.9.4",
+      "app_name": "Gateway_quota_request",
+      "domain": "Datamarket"
+    }
+    ```
+
+## Get Specific Application Metric [/metrics/{appname}]
+
+Get the specific application's metric.
+
+### Get the specific application metric [GET]
+
+- Parameters
+  - appname: "Gateway_quota_request"
+
+
+- Response 200(application/json)
+
+    ```json
+{
+  "performance_index": {
+    "failRatio": 0,
+    "failAmount": 0,
+    "accessAmount": 0,
+    "maxConcurrent": 0,
+    "maxLatency": 0,
+    "minLatency": 0,
+    "avgLatency": 0
+  },
+  "host": "172.22.9.4",
+  "app_name": "Gateway_quota_request",
+  "domain": "Datamarket"
+}
+```
+
+- Response 404
+
+    ```
+404 page not found
+```
+
