@@ -76,5 +76,5 @@ func listenPort() string {
 	if len(os.Getenv("PORT")) > 0 {
 		return os.Getenv("PORT")
 	}
-	return "8080"
+	return "8888"
 }

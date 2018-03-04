@@ -11,11 +11,11 @@ spec:
         k8s-app: k8s-app-monitor-agent
     spec:
       containers:
-      - image: jimmysong/k8s-app-monitor-agent:latest
+      - image: sz-pg-oam-docker-hub-001.tendcloud.com/library/k8s-app-monitor-agent:latest
         imagePullPolicy: Always
         name: app
         ports:
-        - containerPort: 8080
+        - containerPort: 8888
         env: 
         - name: APP_PORT
           value: "3000"
@@ -30,7 +30,7 @@ metadata:
     k8s-svc: k8s-app-monitor-agent
 spec:
   ports:
-  - port: 8080
+  - port: 8888
     protocol: TCP
     name: http
   selector:
