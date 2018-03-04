@@ -8,3 +8,26 @@ Get the metrics from the service  [k8s-app-monitor-test](https://github.com/root
 
 ![chart](images/chart.png)
 
+**Note**: This app depend on [k8s-app-monitor-test](https://github.com/rootsongjc/k8s-app-monitor-test) so that it cannot running alone.
+
+## Usage
+
+**Step1 Change image tags**
+
+Based on the image tags in fact, change the tag for  `monitor-agent` and `monitor-test` images.
+
+**Step2 Rock it**
+
+Make sure `docker-compose` has been installed already and then run the following command.
+
+```bash
+docker-compose up
+```
+
+**Step3 View in browser**
+
+Open the following URL in your brower.
+
+http://localhost:8888
+
+You will see the picture in the beginning. Try to refresh the page, you will see different date every time you fresh the page.
