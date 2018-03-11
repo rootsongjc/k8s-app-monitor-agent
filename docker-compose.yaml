@@ -1,7 +1,7 @@
 version: '2'
 services:
   k8s-app-monitor-agent:
-    image: jimmysong/k8s-app-monitor-agent:da26866
+    image: jimmysong/k8s-app-monitor-agent:234d51c
     container_name: monitor-agent
     depends_on:
       - k8s-app-monitor-test
@@ -10,7 +10,7 @@ services:
     environment:
       - SERVICE_NAME=k8s-app-monitor-test
   k8s-app-monitor-test:
-    image: jimmysong/k8s-app-monitor-test:fdcfd68
+    image: jimmysong/k8s-app-monitor-test:9c935dd
     container_name: monitor-test
     ports:
       - 3000:3000
