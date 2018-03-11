@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.10.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: k8s-app-monitor-agent
+  name: k8s-app-monitor-agent
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: k8s-app-monitor-agent
+    spec:
+      containers:
+      - env:
+        - name: SERVICE_NAME
+          value: k8s-app-monitor-test
+        image: jimmysong/k8s-app-monitor-agent:234d51c
+        name: monitor-agent
+        ports:
+        - containerPort: 8888
+        resources: {}
+      restartPolicy: Always
+status: {}

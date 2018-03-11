@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-app-monitor-agent-ingress
+spec:
+  rules:
+  - host: k8s-app-monitor-agent.jimmysong.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: k8s-app-monitor-agent
+          servicePort: 8888
