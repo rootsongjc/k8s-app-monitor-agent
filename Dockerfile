@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM alpine
 
 ADD k8s-app-monitor-agent /usr/bin/
 
