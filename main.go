@@ -12,11 +12,12 @@ import (
 )
 
 var m metric.Metric
+var path = "/k8s-app-monitor-agent"
 
 func main() {
 	listenPort := fmt.Sprintf(":%s", listenPort())
 	fmt.Printf("Listening on %s\n", listenPort)
-	http.HandleFunc("/", drawChart)
+	http.HandleFunc(path, drawChart)
 	log.Fatal(http.ListenAndServe(listenPort, nil))
 }
 
