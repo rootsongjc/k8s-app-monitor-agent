@@ -21,7 +21,7 @@ spec:
       - env:
         - name: SERVICE_NAME
           value: k8s-app-monitor-test
-        image: jimmysong/k8s-app-monitor-agent:234d51c
+        image: jimmysong/k8s-app-monitor-agent:749f547
         name: monitor-agent
         ports:
         - containerPort: 8888
